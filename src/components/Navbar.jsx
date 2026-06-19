@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
+import coffeeImage from "../assets/beans.jpg";
 
 function Navbar() {
   const navLinks = ["HOME", "MENU", "CONTACT", "ABOUT US"];
