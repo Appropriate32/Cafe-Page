@@ -3,14 +3,14 @@ import coffeeImage from "../assets/beans.png";
 
 function Hero() {
   return (
-    <div className="w-full bg-linear-to-br from-[#FFFBF2] to-[#F5E6D3] min-h-screen flex justify-center items-center">
-      <main className="max-w-7xl gap-8 w-full mx-auto px-8 flex flex-col md:flex-row">
+    <div className="w-full bg-gradient-to-br from-[#E6D2B5] via-[#D4A373] to-[#C18A58] min-h-screen flex justify-center items-center">
+      <main className="max-w-7xl gap-8 w-full mx-auto px-8 flex flex-col py-36 md:flex-row">
         <div className="p-2 flex flex-col justify-center gap-6 py-12 md:py-0 w-full md:w-1/2">
-          <h1 className="text-4xl text-gray-500 italic">Coffee For</h1>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#B38B5D]">
+          <h1 className="text-4xl text-[#5D4037] italic">Coffee For</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#2C1810]">
             Everyday Adventure
           </h1>
-          <p className="text-gray-600 max-w-md">
+          <p className="text-[#4A3022] max-w-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
             deleniti voluptatum dolores iure, exercitationem culpa suscipit,
             perferendis tempora obcaecati nam accusantium libero neque impedit
@@ -19,7 +19,7 @@ function Hero() {
           <div className="flex gap-4 items-baseline">
             <Button
               variant="outline"
-              className="text-amber-800 hover:bg-amber-800 hover:text-white bg-transparent border border-amber-800"
+              className="text-[#2C1810] hover:bg-[#2C1810] hover:text-[#FDF8EE] bg-transparent border border-[#2C1810]"
             >
               Get yours now
             </Button>
@@ -35,7 +35,7 @@ function Hero() {
           <img
             src={coffeeImage}
             alt="beans"
-            className="w-full max-w-xs md:max-w-md lg:max-w-full drop-shadow-2xl object-contain hover:scale-105 transition-transform duration-500"
+            className="w-full max-w-xs md:max-w-md lg:max-w-full drop-shadow-[0_10px_20px_rgba(60,30,0,0.6)] object-contain hover:scale-105 transition-transform duration-500"
           />
         </div>
       </main>
