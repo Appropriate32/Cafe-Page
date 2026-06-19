@@ -1,13 +1,8 @@
+import { Menu } from "lucide-react";
+import { Button } from "./ui/button";
+
 function Navbar() {
-  const navLinks = [
-    "HOME",
-    "COFFEE",
-    "TEA",
-    "CAKES TO GO",
-    "CAFE MENU",
-    "OUR STORES",
-    "ABOUT US",
-  ];
+  const navLinks = ["HOME", "MENU", "CONTACT", "ABOUT US"];
 
   return (
     <header className="w-full bg-white border-b shadow-sm">
@@ -15,7 +10,7 @@ function Navbar() {
         <div className="w-16 shrink-0 h-16 bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold border border-black">
           LOGO
         </div>
-        <ul className="flex gap-6">
+        <ul className="hidden md:flex gap-6">
           {navLinks.map((link, index) => (
             <li
               key={index}
@@ -25,6 +20,16 @@ function Navbar() {
             </li>
           ))}
         </ul>
+
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-900 hover:text-[#B38B5D]"
+          >
+            <Menu className="w-12 h-12" />
+          </Button>
+        </div>
       </nav>
     </header>
   );
