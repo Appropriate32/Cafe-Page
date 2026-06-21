@@ -5,7 +5,7 @@ import Menu from "./components/Menu.jsx";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#FDFBF7] items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-[#E6D2B5] via-[#D4A373] to-[#C18A58] items-center justify-center">
       <Navbar />
       <Hero />
       <Menu />

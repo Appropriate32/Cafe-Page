@@ -3,8 +3,8 @@ import coffeeImage from "../assets/beans.png";
 
 function Hero() {
   return (
-    <div className="w-full bg-gradient-to-br from-[#E6D2B5] via-[#D4A373] to-[#C18A58] min-h-screen flex justify-center items-center">
-      <main className="max-w-7xl gap-8 w-full mx-auto px-8 flex flex-col py-36 md:flex-row">
+    <div className="w-full pt-32 pb-12 flex justify-center items-center">
+      <main className="max-w-7xl gap-8 w-full mx-auto px-8 flex flex-col py-14 md:flex-row">
         <div className="p-2 flex flex-col justify-center gap-6 py-12 md:py-0 w-full md:w-1/2">
           <h1 className="text-4xl text-[#5D4037] italic">Coffee For</h1>
           <h1 className="text-4xl md:text-5xl font-bold text-[#2C1810]">
