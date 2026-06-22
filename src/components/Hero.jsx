@@ -1,12 +1,23 @@
 import { Button } from "./ui/button";
 import coffeeImage from "../assets/beans.png";
+import { motion } from "framer-motion";
 
 function Hero() {
   return (
-    <div className="w-full pt-32 pb-12 flex justify-center items-center">
+    <div
+      id="home"
+      className="w-full pt-32 pb-12 flex justify-center items-center overflow-hidden"
+    >
       <main className="max-w-7xl gap-8 w-full mx-auto px-8 flex flex-col py-14 md:flex-row">
-        <div className="p-2 flex flex-col justify-center gap-6 py-12 md:py-0 w-full md:w-1/2">
-          <h1 className="text-4xl text-[#5D4037] italic">Coffee For</h1>
+        <motion.div
+          className="p-2 flex flex-col justify-center gap-6 py-12 md:py-0 w-full md:w-1/2"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="text-4xl text-[#5D4037] italic font-serif">
+            Coffee For
+          </h1>
           <h1 className="text-4xl md:text-5xl font-bold text-[#2C1810]">
             Everyday Adventure
           </h1>
@@ -30,14 +41,20 @@ function Hero() {
               Get reservation &rarr;
             </Button>
           </div>
-        </div>
-        <div className="w-full md:w-1/2 flex justify-center items-center ">
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center items-center"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        >
           <img
             src={coffeeImage}
             alt="beans"
             className="w-full max-w-xs md:max-w-md lg:max-w-full drop-shadow-[0_10px_20px_rgba(60,30,0,0.6)] object-contain hover:scale-105 transition-transform duration-500"
           />
-        </div>
+        </motion.div>
       </main>
     </div>
   );
