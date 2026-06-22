@@ -21,7 +21,7 @@ function Hero() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#2C1810]">
             Everyday Adventure
           </h1>
-          <p className="text-[#4A3022] max-w-md">
+          <p className="text-[#4A3022] max-w-md leading-relaxed">
             Whether you're conquering a mountain of emails or exploring new city
             streets, every great journey starts with the perfect cup. We roast
             bold, ethically sourced beans to fuel your daily grind and awaken
