@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import { motion } from "framer-motion";
 
 import espressoImg from "../assets/classic-espresso.jpg";
 import macchiatoImg from "../assets/caramel-macchiato.jpg";
@@ -68,45 +69,63 @@ function Menu() {
   return (
     <section id="menu" className="w-full bg-transparent py-12">
       <div className="max-w-7xl mx-auto px-8">
-        <h2 className="text-center text-[#2C1810] font-bold text-4xl mb-16 tracking-tight">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center font-sans text-[#2C1810] font-bold text-4xl mb-16 tracking-tight"
+        >
           Our Menu
-        </h2>
+        </motion.h2>
 
         {/* Adjusted gap to give the larger cards breathing room */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {coffeeMenu.map((item) => (
-            <Card
+          {coffeeMenu.map((item, index) => (
+            <motion.div
               key={item.id}
-              className="border-white/40 bg-[#FFFBF2]/60 backdrop-blur-md hover:bg-[#FFFBF2]/80 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
-              {/* Image Container - Top Centered */}
-              <div className="pt-8 flex justify-center">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  // w-28 h-28 forces a perfect circle, object-cover prevents stretching
-                  className="w-28 h-28 rounded-full object-cover border-4 border-[#FFFBF2] shadow-md"
-                />
-              </div>
-
-              {/* Text Content - Center Aligned */}
-              <CardHeader className="pb-3 text-center">
-                <CardTitle className="text-2xl font-bold text-[#2C1810] mb-3">
-                  {item.name}
-                </CardTitle>
-                <div className="flex justify-center">
-                  <span className="bg-[#2C1810] text-[#FFFBF2] px-4 py-1.5 rounded-full text-sm font-bold tracking-wider shadow-sm">
-                    {item.price}
-                  </span>
+              <Card
+                key={item.id}
+                className="border-white/40 bg-[#FFFBF2]/60 backdrop-blur-md hover:bg-[#FFFBF2]/80 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+              >
+                {/* Image Container - Top Centered */}
+                <div className="pt-8 flex justify-center">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    // w-28 h-28 forces a perfect circle, object-cover prevents stretching
+                    className="w-28 h-28 rounded-full object-cover border-4 border-[#FFFBF2] shadow-md"
+                  />
                 </div>
-              </CardHeader>
 
-              <CardContent className="text-center pb-8">
-                <CardDescription className="text-[#4A3022] text-sm font-medium leading-relaxed px-2">
-                  {item.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+                {/* Text Content - Center Aligned */}
+                <CardHeader className="pb-3 text-center">
+                  <CardTitle className="text-2xl font-bold text-[#2C1810] mb-3">
+                    {item.name}
+                  </CardTitle>
+                  <div className="flex justify-center">
+                    <span className="bg-[#2C1810] text-[#FFFBF2] px-4 py-1.5 rounded-full text-sm font-bold tracking-wider shadow-sm">
+                      {item.price}
+                    </span>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="text-center pb-8">
+                  <CardDescription className="text-[#4A3022] text-sm font-medium leading-relaxed px-2">
+                    {item.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
