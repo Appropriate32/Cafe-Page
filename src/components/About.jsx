@@ -1,12 +1,19 @@
 import { Coffee, Leaf } from "lucide-react";
 import wideCafe from "../assets/wide-cafe.jpg";
 import beansRoasting from "../assets/beans-roasting.jpg";
+import { motion } from "framer-motion";
 
 function About() {
   return (
     <section id="about" className="w-full bg-[#FFFBF2] py-24 text-[#2C1810]">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="relative w-full h-100 sm:h-125">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative w-full h-100 sm:h-125"
+        >
           <img
             src={wideCafe}
             alt="Barista brewing coffee"
@@ -18,9 +25,15 @@ function About() {
             alt="Coffee beans roasting"
             className="w-[55%] h-[55%] object-cover rounded-lg shadow-2xl absolute bottom-0 right-0 border-8 border-[#FFFBF2]"
           />
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="flex flex-col"
+        >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-0.5 bg-[#C18A58]"></div>
             <span className="text-[#C18A58] font-bold tracking-widest text-sm uppercase">
@@ -74,7 +87,7 @@ function About() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

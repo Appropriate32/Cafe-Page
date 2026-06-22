@@ -1,12 +1,18 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 import cafeInterior from "../assets/cafe-interior.jpg";
 
 function Contact() {
   return (
     <section id="contact" className="w-full bg-[#2C1810] py-24">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* LEFT COLUMN: Contact Information */}
-        <div className="flex flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col"
+        >
           {/* Accent Line & Overline Text */}
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-0.5 bg-[#D4A373]"></div>
@@ -159,18 +165,23 @@ function Contact() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* RIGHT COLUMN: Visual Replacement for the Form */}
-        <div className="w-full h-full min-h-100 lg:min-h-150 rounded-lg overflow-hidden relative shadow-2xl border border-white/10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="w-full h-full min-h-100 lg:min-h-150 rounded-lg overflow-hidden relative shadow-2xl border border-white/10"
+        >
           <img
             src={cafeInterior}
             alt="Cafe Interior"
             className="w-full h-full object-cover absolute inset-0"
           />
-          {/* Subtle dark overlay to ensure it blends nicely with the section */}
+
           <div className="absolute inset-0 bg-[#2C1810]/20"></div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
