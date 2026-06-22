@@ -22,10 +22,10 @@ function Hero() {
             Everyday Adventure
           </h1>
           <p className="text-[#4A3022] max-w-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-            deleniti voluptatum dolores iure, exercitationem culpa suscipit,
-            perferendis tempora obcaecati nam accusantium libero neque impedit
-            sint nobis officiis, quidem ad ea.
+            Whether you're conquering a mountain of emails or exploring new city
+            streets, every great journey starts with the perfect cup. We roast
+            bold, ethically sourced beans to fuel your daily grind and awaken
+            your next big idea.
           </p>
           <div className="flex gap-4 items-baseline">
             <Button
